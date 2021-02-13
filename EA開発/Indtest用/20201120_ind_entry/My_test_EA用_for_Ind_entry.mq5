@@ -27,6 +27,16 @@ input double Inp_nobiritu =1.6;// tp d12率 EA
 input double Inp_songiriritu= 1.15;//　sl d12率 EA
 input double Inp_tp_per_sl_hiritu=1.0;// tp/sl率以上でエントリー可とする
 input bool Inp_VjiUse=false;// \Vjiつかうｔ、使わないF
+input double Inp_para_double1 =0.1;//double para1
+input double Inp_para_double2 =1.0;//double para2
+input double Inp_para_double3 =0.2;//double para3
+input double Inp_para_double4 =2.0;//double para4
+input double Inp_para_int1 =0;//int para1
+input double Inp_para_int2 =0;//int para2
+input double Inp_para_int3 =0;//int para2
+
+
+
 
 input bool Inp_OPTIMUM_tester = false;//最適化時T、単体動作時はF　グローバル変数最適化時使えないため
 
@@ -906,7 +916,11 @@ void IndOninit(void){
     ENUM_TIMEFRAMES period = Period();
 //    int handle = iCustom(Symbol(),Period(),"MyMASignal\\パターン\\_20200509_current_レンジパターン_chg_entry動的\\TestZigzagPattern_current",period);
     handle_c = iCustom(Symbol(),Period(),
-    "_Ind\\ind1\\ooooo",Inp_nobiritu,Inp_songiriritu,Inp_tp_per_sl_hiritu,Inp_VjiUse);
+    "_Ind\\ind1\\ooooo",Inp_nobiritu,Inp_songiriritu,Inp_tp_per_sl_hiritu,Inp_VjiUse,
+	Inp_para_double1,Inp_para_double2,Inp_para_double3,
+	Inp_para_int1,Inp_para_int2,Inp_para_int3
+	);
+//    "_Ind\\ind1\\ooooo",Inp_nobiritu,Inp_songiriritu,Inp_tp_per_sl_hiritu,Inp_VjiUse);
 //    "MyMASignal\\パターン\\_20201016_current_zigzagoutput_chg_entry動的\\ooooo",Inp_nobiritu,Inp_songiriritu,Inp_tp_per_sl_hiritu);
 //    "MyMASignal\\パターン\\_20201016_current_zigzagoutput_chg_entry動的\\ooooo",\Inp_nobiritu,Inp_songiriritu,);
     

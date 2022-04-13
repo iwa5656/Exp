@@ -31,7 +31,7 @@ input double Inp_para_double1 =0.1;//double para1
 input double Inp_para_double2 =1.0;//double para2
 input double Inp_para_double3 =0.2;//double para3
 input double Inp_para_double4 =2.0;//double para4
-input double Inp_para_int1 =0;//int para1
+input double Inp_para_int1 =2;//int para1
 input double Inp_para_int2 =0;//int para2
 input double Inp_para_int3 =0;//int para2
 
@@ -44,7 +44,7 @@ input double Inp_para_double1 =0.1;//double para1
 input double Inp_para_double2 =1.0;//double para2
 input double Inp_para_double3 =0.2;//double para3
 input double Inp_para_double4 =2.0;//double para4
-input double Inp_para_int1 =0;//int para1
+input double Inp_para_int1 =2;//int para1
 input double Inp_para_int2 =0;//int para2
 input double Inp_para_int3 =0;//int para2
 #endif

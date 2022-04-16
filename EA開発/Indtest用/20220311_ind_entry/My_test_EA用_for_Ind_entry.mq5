@@ -27,7 +27,7 @@ input double Inp_nobiritu =1.0;// tp d12率 EA
 input double Inp_songiriritu= 1.15;//　sl d12率 EA
 input double Inp_tp_per_sl_hiritu=1.0;// tp/sl率以上でエントリー可とする
 input bool Inp_VjiUse=false;// \Vjiつかうｔ、使わないF
-input double Inp_para_double1 =0.1;//double para1
+input double Inp_para_double1 =0.2;//double para1
 input double Inp_para_double2 =1.0;//double para2
 input double Inp_para_double3 =0.2;//double para3
 input double Inp_para_double4 =2.0;//double para4
@@ -40,7 +40,7 @@ input double Inp_nobiritu =1.6;// tp d12率 EA
 input double Inp_songiriritu= 1.15;//　sl d12率 EA
 input double Inp_tp_per_sl_hiritu=1.0;// tp/sl率以上でエントリー可とする
 input bool Inp_VjiUse=false;// \Vjiつかうｔ、使わないF
-input double Inp_para_double1 =0.1;//double para1
+input double Inp_para_double1 =0.2;//double para1
 input double Inp_para_double2 =1.0;//double para2
 input double Inp_para_double3 =0.2;//double para3
 input double Inp_para_double4 =2.0;//double para4
@@ -61,6 +61,15 @@ input bool Inp_OPTIMUM_tester = false;//最適化時T、単体動作時はF　�
                input double Lots           = 0.1;     //number of lots
 
 // 
+input bool use_calc_pass_kako=true;  // 過去全部計算F:一部T
+input int use_calc_pass_kako_num=5000;  // 過去何bar分計算するか（一部計算の時有効）
+ 
+
+
+input ENUM_TIMEFRAMES Inp_base_time_frame = PERIOD_M1;// 評価時間軸
+//input ENUM_TIMEFRAMES Inp_base_time_frame = PERIOD_M5;// 評価時間軸
+//input ENUM_TIMEFRAMES Inp_base_time_frame = PERIOD_H1;// 評価時間軸
+//input ENUM_TIMEFRAMES Inp_base_time_frame = PERIOD_H4;// 評価時間軸
 
 
 //----------------------------------------------------------------------------------------
@@ -932,7 +941,11 @@ void IndOninit(void){
     handle_c = iCustom(Symbol(),Period(),
     "_Ind\\ind1\\ooooo",Inp_nobiritu,Inp_songiriritu,Inp_tp_per_sl_hiritu,Inp_VjiUse,
 	Inp_para_double1,Inp_para_double2,Inp_para_double3,Inp_para_double4, //add double4 20210820 線が引かれない不具合対応
-	Inp_para_int1,Inp_para_int2,Inp_para_int3
+	Inp_para_int1,Inp_para_int2,Inp_para_int3,
+	use_calc_pass_kako,
+	use_calc_pass_kako_num,
+	Inp_base_time_frame
+
 	);
 //    "_Ind\\ind1\\ooooo",Inp_nobiritu,Inp_songiriritu,Inp_tp_per_sl_hiritu,Inp_VjiUse);
 //    "MyMASignal\\パターン\\_20201016_current_zigzagoutput_chg_entry動的\\ooooo",Inp_nobiritu,Inp_songiriritu,Inp_tp_per_sl_hiritu);
